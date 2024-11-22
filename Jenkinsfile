@@ -10,14 +10,14 @@ pipeline {
         stage("Install dependencies") {
             steps {
                 script{
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
         stage("Start Application and run tests") {
             steps {
                 script {
-                    sh 'start /b npm start'
+                    bat 'start /b npm start'
                 }
             }
         }

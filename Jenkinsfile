@@ -17,7 +17,9 @@ pipeline {
         stage("Start Application and run tests") {
             steps {
                 script {
-                    sh 'start /b npm start'
+                    sh 'npm start &'
+                    sh 'wait on http://localhost:8081'
+                    sh 'npm test'
                 }
             }
         }

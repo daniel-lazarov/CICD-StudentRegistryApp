@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout'){
             steps{
@@ -10,12 +10,7 @@ pipeline {
         stage("Install dependencies") {
             steps {
                 script{
-                    if(isUnix()){
-                        sh 'npm install'
-                    }
-                    else {
-                        sh 'npm install'
-                    }
+                    sh 'npm install'
                 }
             }
         }
